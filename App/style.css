@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+button.delete {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background: #2196F3;
+  width: 500px;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
