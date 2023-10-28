@@ -1,25 +1,14 @@
-const theBtn1 = document.getElementById('oneBtn');
-const theinput1 = document.getElementById('one');
-const theBtn2 = document.getElementById('twoBtn');
-const theinput2 = document.getElementById('two');
-const theBtn3 = document.getElementById('threeBtn');
-const theinput3 = document.getElementById('three');
-const theBtn4 = document.getElementById('foorBtn');
-const theinput4 = document.getElementById('foor');
-const theBtn5 = document.getElementById('fiveBtn');
-const theinput5 = document.getElementById('five');
-const theBtn6 = document.getElementById('sixBtn');
-const theinput6 = document.getElementById('six');
-const theBtn7 = document.getElementById('sevenBtn');
-const theinput7 = document.getElementById('seven');
+'use-strict'
+// i"s"
+let i = 0;
 
 function addTask() {
   var taskInput = document.getElementById("task");
   var taskText = taskInput.value;
 
   if (taskText.trim() === "") {
-      alert("Please enter a task.");
-      return;
+    alert("Please enter a task.");
+    return;
   }
 
   var ul = document.getElementById("taskList");
@@ -28,33 +17,33 @@ function addTask() {
   li.innerHTML = `
     <h1 style="border: 0rem;">${taskText}</h1>
       <div class="grid-container">
-      <div class="grid-item">
+      <div onclick="ChangeColor('on')" class="grid-item" id="on">
           <input id="one" type="text">
-          <button id="oneBtn">Add</button>
+          <button onclick="OOPInput('one')" id="oneBtn">Add</button>
       </div>
-      <div class="grid-item">
+      <div onclick="ChangeColor('tw')" class="grid-item" id="tw">
         <input id="two" type="text">
-        <button id="twoBtn">Add</button>
+        <button onclick="OOPInput('two')" id="twoBtn">Add</button>
       </div>
-      <div class="grid-item">
+      <div onclick="ChangeColor('th')" class="grid-item" id="th">
           <input id="three" type="text">
-          <button id="threeBtn">Add</button>
+          <button onclick="OOPInput('three')" id="threeBtn">Add</button>
       </div>
-      <div class="grid-item">
+      <div onclick="ChangeColor('fo')" class="grid-item" id="fo">
           <input id="foor" type="text">
-          <button id="foorBtn">Add</button>
+          <button onclick="OOPInput('foor')" id="foorBtn">Add</button>
       </div>
-      <div class="grid-item">
+      <div onclick="ChangeColor('fi')" class="grid-item" id="fi">
           <input id="five" type="text">
-          <button id="fiveBtn">Add</button>
+          <button onclick="OOPInput('five')" id="fiveBtn">Add</button>
       </div>
-      <div class="grid-item">
+      <div onclick="ChangeColor('si')" class="grid-item" id="si">
           <input id="six" type="text">
-          <button id="sixBtn">Add</button>
+          <button onclick="OOPInput('six')" id="sixBtn">Add</button>
       </div>
-      <div class="grid-item">
+      <div onclick="ChangeColor('se')" class="grid-item" id="se">
           <input id="seven" type="text">
-          <button id="sevenBtn">Add</button>
+          <button onclick="OOPInput('seven')" id="sevenBtn">Add</button>
       </div>
     </div>
   `;
@@ -63,12 +52,27 @@ function addTask() {
   taskInput.value = "";
 }
 
-theBtn1.addEventListener('click', function() {
-  theBtn1.parentElement.innerHTML theinput1.value
-})
+function OOPInput(num) {
+  const theinput = document.getElementById(num);
+  theinput.parentElement.innerHTML = theinput.value;
+  setTimeout(iadd, 1000)
+};
+
+function iadd() {
+  i++
+}
+
+function ChangeColor(lnum) {
+  if(i >= 1) {
+    document.getElementById(lnum).style.background = "#63FF7C";
+    i--
+  } else {
+    return;
+  }
+}
 
 function deleteTask(button) {
   var li = button.parentElement;
   var ul = li.parentElement;
-  li.style.background = "red"
+  li.style.background = "red";
 }
